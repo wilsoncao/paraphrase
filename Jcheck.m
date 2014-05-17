@@ -1,9 +1,15 @@
-function J_sum = Jcheck(theta,info,root,tree)
+% function J_sum = Jcheck(theta,info,root,tree)
+% 
+% [W_e,b_e,W_d,b_d] = stack2param(theta,info);
+% J_sum = J_sub(W_e,W_d,b_e,b_d,root,tree);
+% 
+% end
 
-[W_e,b_e,W_d,b_d] = stack2param(theta,info);
-J_sum = J_sub(W_e,W_d,b_e,b_d,root,tree);
 
+function J_sum = Jcheck(theta,info,training,wd)
+J_sum = J(theta,info,training,wd);
 end
+
 
 
 % 

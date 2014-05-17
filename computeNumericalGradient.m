@@ -1,4 +1,4 @@
-function numgrad = computeNumericalGradient(J, theta,info,root,tree)
+function numgrad = computeNumericalGradient(J, theta,info,training,wd)
 % numgrad = computeNumericalGradient(J, theta)
 % theta: a vector of parameters
 % J: a function that outputs a real-number. Calling y = J(theta) will return the
@@ -22,7 +22,7 @@ EPSILON=0.0004;
 %i=1;
 ei=zeros(size(theta));
 ei(1)=1;
-numgrad=(J(theta+EPSILON*ei,info,root,tree)-J(theta-EPSILON*ei,info,root,tree))/(2*EPSILON);
+numgrad=(J(theta+EPSILON*ei,info,training,wd)-J(theta-EPSILON*ei,info,training,wd))/(2*EPSILON);
 
 
 
